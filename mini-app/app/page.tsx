@@ -1,3 +1,5 @@
+"use client";
+
 import { description, title, url } from "@/lib/metadata";
 import { Metadata } from "next";
 
@@ -34,9 +36,21 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <main className="flex flex-col gap-12 px-4 py-8 min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+      <style jsx global>{`
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 5s ease infinite;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center gap-6">
-        <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-600">
+        <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-600 animate-gradient">
           XnodeOS
         </h1>
         <p className="text-xl max-w-2xl">
@@ -45,14 +59,14 @@ export default function Home() {
         <img
           src="/hero.png"
           alt="XnodeOS Hero"
-          className="w-full max-w-3xl rounded-xl shadow-2xl transform transition-transform duration-700 hover:scale-105 animate-pulse"
+          className="w-full max-w-3xl rounded-xl shadow-2xl transform transition-transform duration-700 hover:scale-105"
         />
       </section>
 
       {/* Features Section */}
       <section className="flex flex-col md:flex-row items-center gap-8">
         <div className="md:w-1/2 flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-600">
+          <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-600 animate-gradient">
             No‑Code Deployment
           </h2>
           <p>
@@ -62,14 +76,14 @@ export default function Home() {
         <img
           src="/features.png"
           alt="No‑Code Deployment"
-          className="md:w-1/2 rounded-xl shadow-lg transform transition-transform duration-700 hover:scale-105 animate-pulse"
+          className="md:w-1/2 rounded-xl shadow-lg transform transition-transform duration-700 hover:scale-105"
         />
       </section>
 
       {/* Security Section */}
       <section className="flex flex-col md:flex-row-reverse items-center gap-8">
         <div className="md:w-1/2 flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-pink-600">
+          <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-pink-600 animate-gradient">
             Built‑In Security
           </h2>
           <p>
@@ -79,14 +93,14 @@ export default function Home() {
         <img
           src="/security.png"
           alt="Built‑In Security"
-          className="md:w-1/2 rounded-xl shadow-lg transform transition-transform duration-700 hover:scale-105 animate-pulse"
+          className="md:w-1/2 rounded-xl shadow-lg transform transition-transform duration-700 hover:scale-105"
         />
       </section>
 
       {/* Deployment Section */}
       <section className="flex flex-col md:flex-row items-center gap-8">
         <div className="md:w-1/2 flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-600">
+          <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-600 animate-gradient">
             Secure Deployment
           </h2>
           <p>
@@ -96,13 +110,13 @@ export default function Home() {
         <img
           src="/deployment.png"
           alt="Secure Deployment"
-          className="md:w-1/2 rounded-xl shadow-lg transform transition-transform duration-700 hover:scale-105 animate-pulse"
+          className="md:w-1/2 rounded-xl shadow-lg transform transition-transform duration-700 hover:scale-105"
         />
       </section>
 
       {/* Call‑to‑Action Section */}
       <section className="flex flex-col items-center gap-6">
-        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-600">
+        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-600 animate-gradient">
           Ready to try XnodeOS?
         </h2>
         <p className="max-w-xl text-center">
@@ -111,7 +125,7 @@ export default function Home() {
         <img
           src="/cta.png"
           alt="Call to Action"
-          className="w-full max-w-md rounded-xl shadow-2xl transform transition-transform duration-700 hover:scale-105 animate-pulse"
+          className="w-full max-w-md rounded-xl shadow-2xl transform transition-transform duration-700 hover:scale-105"
         />
       </section>
     </main>
