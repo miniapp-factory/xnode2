@@ -1,3 +1,5 @@
+"use client";
+
 import { description, title, url } from "@/lib/metadata";
 import { Metadata } from "next";
 
