@@ -1,5 +1,6 @@
 import { description, title, url } from "@/lib/metadata";
 import { Metadata } from "next";
+import GradientStyle from "@/components/GradientStyle";
 
 export const dynamic = "force-dynamic";
 
@@ -34,17 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <main className="flex flex-col gap-12 px-4 py-8 min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-      <style jsx global>{`
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 5s ease infinite;
-        }
-      `}</style>
+      <GradientStyle />
 
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center gap-6">

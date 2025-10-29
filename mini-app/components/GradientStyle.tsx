@@ -1,0 +1,17 @@
+"use client";
+
+export default function GradientStyle() {
+  return (
+    <style jsx global>{`
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 5s ease infinite;
+      }
+    `}</style>
+  );
+}
